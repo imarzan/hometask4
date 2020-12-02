@@ -1,10 +1,9 @@
+const MilitaryType = require('./models/militaryType');
 const PassengerPlane = require('./planes/passengerPlane');
 const MilitaryPlane = require('./planes/militaryPlane');
-const MilitaryType = require('./models/militaryType');
 const ExperimentalPlane = require('./planes/experimentalPlane');
 
 class Airport {
-
     constructor(planes) {
         this.planes = planes;
     }
@@ -65,7 +64,7 @@ class Airport {
     }
 
     static convertToJson(planes) {
-        return JSON.stringify(planes);
+        return JSON.stringify(planes, null, '\t');
     }
 }
 
