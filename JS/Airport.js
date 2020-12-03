@@ -13,23 +13,25 @@ class Airport {
     }
 
     getPassengerPlanes() {
-        return this.planes.filter(plane => plane instanceof PassengerPlane);
+        return this.getPlanes().filter(plane => plane instanceof PassengerPlane);
     }
 
     getMilitaryPlanes() {
-        return this.planes.filter(plane => plane instanceof MilitaryPlane);
+        return this.getPlanes().filter(plane => plane instanceof MilitaryPlane);
     }
 
     getExperimentalPlanes() {
-        return this.planes.filter(plane => plane instanceof ExperimentalPlane);
+        return this.getPlanes().filter(plane => plane instanceof ExperimentalPlane);
     }
 
     getTransportMilitaryPlanes() {
-        return this.getMilitaryPlanes().filter(plane => plane.getMilitaryType() == MilitaryType.TRANSPORT);
+        return this.getMilitaryPlanes().filter(plane => 
+            plane.getMilitaryType() == MilitaryType.TRANSPORT);
     }
 
     getBomberMilitaryPlanes() {
-        return this.getMilitaryPlanes().filter(plane => plane.getMilitaryType() == MilitaryType.BOMBER);
+        return this.getMilitaryPlanes().filter(plane => 
+            plane.getMilitaryType() == MilitaryType.BOMBER);
     }
 
     getPassengerPlaneWithMaxPassengersCapacity() {
